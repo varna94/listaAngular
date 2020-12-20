@@ -24,12 +24,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.hasOwnProperty('lista')) {
       this.listaLogin = JSON.parse(localStorage.getItem('lista') || '{}');
+      console.log("lista - " + this.listaLogin);
     } else {
       this.listaLogin = [];
     }
-    console.log(JSON.parse(localStorage.getItem('lista') || '{}'));
-
-    console.log(this.listaglobal.lista);
+    // console.log(this.listaglobal.lista);
   }
 
   validaEmail(email: any) {
@@ -69,6 +68,7 @@ export class LoginComponent implements OnInit {
         this.infoLogin = { 'email': this.emailLogin, 'senha': this.password };
         // localStorage.setItem('login', this.emailLogin);
         // localStorage.setItem('password', this.password);
+
         console.log(this.infoLogin);
         this.router.navigate(['lista']);
       } else {
