@@ -1,0 +1,24 @@
+<div class="card-login">
+    <h1>SigIn</h1>
+    <div class="margin-top mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+            <input type="email" (keyup)="validaEmailKD($event)" (blur)="validaEmail($event)" class="form-control" id="inputEmail" [ngClass]="emailVazio || !emailValido ? 'error' : 'ok'">
+            <span *ngIf="emailVazio" id="avisoEmailInvalido">Preencha seu email.</span>
+            <span *ngIf="!emailValido" id="avisoEmailInvalido">Email inválido.</span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
+        <div class="col-sm-10">
+            <input type="password" (keyup)="validaSenhaKD()" (blur)="validaSenha($event)" class="form-control" id="inputPassword" [ngClass]="senhaVazia || !senhaValida ? 'error' : 'ok'">
+            <span *ngIf="senhaVazia" id="avisoSenhaInvalida">Senha inválida.</span>
+            <span *ngIf="!senhaValida" id="avisoSenhaInvalidaTamanho">A senha deve ter 6 ou mais caracteres.</span>
+        </div>
+        <div class="buttonsLayout">
+            <button type="button" class="btn btn-secondary btn-lg" routerLink="/cadastro">Criar conta</button>
+            <button type="button" class="btn btn-primary btn-lg" (click)="entrar()">Entrar</button>
+        </div>
+
+    </div>
+</div>

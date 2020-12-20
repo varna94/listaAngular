@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "lista-atv-previa"
+  "defaultProject": "lista-atv-previa",
+  "cli": {
+    "analytics": "90d23002-fcab-4841-8685-b5d69559eacf"
+  }
 }
